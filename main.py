@@ -16,7 +16,12 @@ def pegar_tentativa(palavra, prox_letra):
         return False
 
 def pegar_palavra_4_letras():
-    file = open(palavras4letras, 'r')
+    arquivo = 'palavras4Letras.txt'
+    with open(arquivo, 'r') as file:
+        palavras = arquivo.readlines()
+        p = random.choice(palavras)
+    print(p)
+    return p
 
 def pegar_palavra_5_letras():
     pass
@@ -65,7 +70,7 @@ def pegar_prox_letra(tent):
             if prox_letra in tent:
                 print('{} já foi escolhido antes, escolha outra letra!'.format(prox_letra))
             else:
-                print('Verificando see {} está na palavra...', flush=True)
+                print('Verificando se {} está na palavra...'.format(prox_letra), flush=True)
                 sleep(0.5)
                 return prox_letra
 
@@ -80,7 +85,7 @@ def pegar_random_palavra(tam):
     entrada: tam - variável com o tamanho
     retoran: palavra
     """
-    #por enquanto vai ficar assim
+    print(tam)
     if tam == 4:
         palavra = pegar_palavra_4_letras()
     if tam == 5:
@@ -93,7 +98,7 @@ def pegar_random_palavra(tam):
         palavra = 'inerente'
     if tam == 9:
         palavra = 'perspicaz'
-    else:
+    if tam == 10:
         palavra = 'prescindir'
     return palavra
 
@@ -169,6 +174,7 @@ while (tentativas != 0):
         print('Você perdeu! ', flush=True)
         sleep(0.5)
         print(30 * '-')
+        print('A palavra era {}'.format(palavra))
         print('Fim de jogo!', flush=True)
         sleep(0.5)
         print(30 * '-')
