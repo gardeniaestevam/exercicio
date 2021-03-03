@@ -15,6 +15,27 @@ def pegar_tentativa(palavra, prox_letra):
         sleep(0.5)
         return False
 
+def pegar_palavra_4_letras():
+    file = open(palavras4letras, 'r')
+
+def pegar_palavra_5_letras():
+    pass
+
+def pegar_palavra_6_letras():
+    pass
+
+def pegar_palavra_7_letras():
+    pass
+
+def pegar_palavra_8_letras():
+    pass
+
+def pegar_palavra_9_letras():
+    pass
+
+def pegar_palavra_10_letras():
+    pass
+
 def mostrar_palavra(palavra, acertos):
     """
     Printa a palavra mostrando apenas os caracteres que já foram adivinhados.
@@ -60,20 +81,21 @@ def pegar_random_palavra(tam):
     retoran: palavra
     """
     #por enquanto vai ficar assim
-    palavras = ['amor', 'sagaz',
-                'exceto', 'aspecto', 'inerente',
-                'perspicaz', 'maturidade',
-                'superficial', 'fraternidade',
-                'inconveniente', 'condescendente']
-
-    indice = random.randint(0, len(palavras) - 1)
-    while True:
-        if tam == len(palavras[indice]):
-            break
-        indice = indice + 1
-        if indice == len(palavras):
-            indice = 0
-    return palavras[indice]
+    if tam == 4:
+        palavra = pegar_palavra_4_letras()
+    if tam == 5:
+        palavra = 'sagaz'
+    if tam == 6:
+        palavra = 'exceto'
+    if tam == 7:
+        palavra = 'empatia'
+    if tam == 8:
+        palavra = 'inerente'
+    if tam == 9:
+        palavra = 'perspicaz'
+    else:
+        palavra = 'prescindir'
+    return palavra
 
 print(30 * '-', flush=True)
 sleep(0.5)
